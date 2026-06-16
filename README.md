@@ -1,1 +1,11 @@
-# pw3-ingresso
+Kamila Aparecida da Silva Morais, Kevin Santos Leão 3°AI
+
+CREATE TABLE TBL_SESSAO(
+        ID_SESSAO BIGINT PRIMARY KEY IDENTITY,
+        DT_DATA DATE NOT NULL,
+        HR_HORA TIME NOT NULL,
+        NR_PRECO FLOAT NOT NULL,
+        NR_SALA INT NOT NULL,
+        FK_FILME BIGINT NOT NULL,
+        FOREIGN KEY (FK_FILME) REFERENCES TBL_FILME(ID_FILME)
+);
