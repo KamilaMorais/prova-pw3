@@ -16,7 +16,7 @@ public class Sessao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_SESSAO")
-    private Long id;
+    private Integer id;
 
     @Column(name = "DT_DATA")
     private LocalDate data;

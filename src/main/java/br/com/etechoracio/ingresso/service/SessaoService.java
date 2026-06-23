@@ -1,10 +1,13 @@
 package br.com.etechoracio.ingresso.service;
 
+import br.com.etechoracio.ingresso.dto.FilmeResponseDTO;
+import br.com.etechoracio.ingresso.dto.SessaoResponseDTO;
 import br.com.etechoracio.ingresso.mapper.SessaoMapper;
-import br.com.etechoracio.ingresso.repository.FilmeRepository;
 import br.com.etechoracio.ingresso.repository.SessaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class SessaoService {
@@ -15,5 +18,14 @@ public class SessaoService {
     @Autowired
     private SessaoMapper sessaoMapper;
 
+    public List<SessaoResponseDTO> findAll(){
+        var sessoes = sessaoRepository.findAll();
+        return sessaoMapper.toResponseDTOList(sessoes);
+    }
+
+    public List<SessaoResponseDTO> findByFilme(Long filmeId) {
+        var sessoes = sessaoRepository.findByFilmeId(filmeId);
+        return sessaoMapper.toResponseDTOList(sessoes);
+    }
 
 }
