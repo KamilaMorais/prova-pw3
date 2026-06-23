@@ -25,7 +25,7 @@ public class Sessao {
     private LocalTime horario;
 
     @Column(name = "NR_PRECO")
-    private Double preco;
+    private float preco;
 
     @Column(name = "NR_SALA")
     private String sala;

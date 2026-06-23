@@ -9,7 +9,7 @@ public record SessaoResponseDTO(
         Long id,
         LocalDate data,
         LocalTime horario,
-        Double preco,
+        float preco,
         String sala,
         Filme filme
 ) {}
